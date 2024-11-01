@@ -1,27 +1,48 @@
 import time
 import warnings
-warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore') 
 
 import matplotlib.pyplot as plt
-from matplotlib import rc, font_manager
-
+from matplotlib import rc ,  font_manager
+font_name = font_manager.FontProperties(fname='c:/windows/Fonts/malgun.ttf').get_name()
+rc('font', family=font_name)
 
 import numpy as np
-import cv2
+import cv2  
+# pip install opencv-python
+#-----------------------------------------------------------------------------------
 
-#01testcv.py
 
-path = './data/aveng.jpg'
+path = './data/a1.png'
 img = cv2.imread(path)
-cv2.imshow('first try', img)
-cv2.waitKey() #필수기술
+cv2.imshow('111 test', img)
+cv2.waitKey()  
 
-# yuv_img = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
 img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)
-cv2.imshow('color test', img2)
-cv2.waitKey()
+cv2.imshow('222 test', img2 )
+cv2.waitKey() 
+
+
+path = './data/a1.png'
+img3 = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+cv2.imshow('333 test', img3)
+cv2.waitKey()  
+cv2.imwrite('./my/agray.png', img3)
+
+print('11-1-금요일 10  28')
+
+# RGB란 가장 일반적인 Color Space로 Red, Green, Blue
+# Y밝기 UV 
+# HSV  Hue(색상)   Saturation(채도)   Value(명도)
+# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
+# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
+# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
+# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
+# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
 
 
 
-print('11-1-금요일 opencv test 10 28')
+
+

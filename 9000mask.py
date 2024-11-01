@@ -15,8 +15,13 @@ import cv2
 # https://opencv.org/
 
 
-img = cv2.imread('./data/36.jpg')
+img = cv2.imread('./data/a1.png')
+cv2.imshow('title 1', img)
+cv2.waitKey()
 
+yuv_img = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
+cv2.imshow('title 2', yuv_img)
+cv2.waitKey()
 print()
 print('이미지출력 해야 합니다 ')
 

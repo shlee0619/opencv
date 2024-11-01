@@ -12,24 +12,21 @@ import cv2
 # pip install opencv-python
 #-----------------------------------------------------------------------------------
 
-#01testcv.py
+#03testcv.py
 path = './data/a1.png'
 img = cv2.imread(path)
-cv2.imshow('first test', img)
+cv2.imshow('1 test', img)
 cv2.waitKey() #필수기술 
 
-img2 = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
-cv2.imshow('color test', img2 )
+yuv_img = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
+# cv2.imshow('yuv  test', yuv_img)
+cv2.imshow('yuv_img[:, :, 0]', yuv_img[:, :, 0]) 
+cv2.imshow('yuv_img[:, :, 1]', yuv_img[:, :, 1]) 
+cv2.imshow('yuv_img[:, :, 2]', yuv_img[:, :, 2]) 
 cv2.waitKey() #필수기술 
 
 
-print('11-1-금요일 opencv test  10 13')
+print('11-1-금요일 opencv test  10 42 ')
 
 
 

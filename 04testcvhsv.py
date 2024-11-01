@@ -12,24 +12,19 @@ import cv2
 # pip install opencv-python
 #-----------------------------------------------------------------------------------
 
-#01testcv.py
 path = './data/a1.png'
 img = cv2.imread(path)
-cv2.imshow('first test', img)
+cv2.imshow('1 test', img)
 cv2.waitKey() #필수기술 
 
-img2 = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
-# img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
-cv2.imshow('color test', img2 )
+hsv_img = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+cv2.imshow('hsv_img[:, :, 0]', hsv_img[:, :, 0]) 
+cv2.imshow('hsv_img[:, :, 1]', hsv_img[:, :, 1]) 
+cv2.imshow('hsv_img[:, :, 2]', hsv_img[:, :, 2]) 
 cv2.waitKey() #필수기술 
 
-
-print('11-1-금요일 opencv test  10 13')
+# HSV  Hue(색상)   Saturation(채도)   Value(명도)
+print('11-1-금요일 opencv test  10 42 ')
 
 
 

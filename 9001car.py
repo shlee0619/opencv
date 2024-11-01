@@ -52,7 +52,7 @@ time.sleep(1)
 
 
 
-## 4번째 가우시안블러 - 그림의 노이즈 제거 
+# 가우시안블러 - 그림의 노이즈 제거 
 # Contours를 찾으려면 검은색 배경에 흰색 바탕이어야 함
 # Contours란 동일한 색 또는 동일한 강도를 가지고 있는 영역의 경계선을 연결한 선
 #4번째 GauusianBlur적용해서 Thresholding 글자번호추출
@@ -71,6 +71,7 @@ img_blur_thresh = cv2.adaptiveThreshold(
 plt.title('cv2.GaussianBlur')
 plt.imshow(img_blur_thresh, cmap='gray')
 plt.show()
+# plt.axes('off')
 print()
 
 ##########################################################################################################
