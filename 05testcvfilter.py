@@ -12,30 +12,26 @@ import cv2
 # pip install opencv-python
 #-----------------------------------------------------------------------------------
 
-#01testcv.py
-path = './data/aveng.jpg'
+#05testcvfilter.py
+path = './data/a1.png'
 img = cv2.imread(path)
 cv2.imshow('1 test', img)
+
+kernel3 = np.ones((3,3), np.float32) # / 9
+kernel5 = np.ones((5,5), np.float32) # / 25
+
+filter3 = cv2.filter2D(img, -1, kernel3)
+filter5 = cv2.filter2D(img, -1, kernel5)
+cv2.imshow('cv2.filter2D(img, -1, kernel3)',filter3)
+cv2.imshow('cv2.filter2D(img, -1, kernel5)',filter5)
 cv2.waitKey() 
 
-# cv2.cvtColor () 실습확인
-# 필터적용 cv2.filter2D(1이미지, 2)
-kerne13 = np.ones((3,3), np.float32) / 9
-kerne15 = np.ones((5,5), np.float32) / 25
+#filter효과가 약해서 블러링 가우시안블러링 적용 
 
-filter3 = cv2.filter2D(img, -1, kerne13)
-filter5 = cv2.filter2D(img, -1, kerne15)
-cv2.imshow('cv2.filter2D(img, -1, kerne13)', filter3)
-cv2.imshow('cv2.filter2D(img, -1, kerne15)', filter5)
-cv2.waitKey()
-
-
-# cv2.filter2D()
-
-
-
-
-print('11-1 금요일 opencv test 11 14')
+print('11-1-금요일 opencv test   11 14')
 print()
+
+
+
 
 

@@ -8,16 +8,13 @@ font_name = font_manager.FontProperties(fname='c:/windows/Fonts/malgun.ttf').get
 rc('font', family=font_name)
 
 import numpy as np
-import cv2   
-
-
+import cv2  
 # pip install opencv-python
-# https://opencv.org/
+#-----------------------------------------------------------------------------------
+ 
+img = np.full( (250,250,3), 255, dtype=np.uint8)
+cv2.circle(img, (120,120), 100, (255,255,0), 15) #bgr
 
-
-img = cv2.imread('./data/a1.png')
-cv2.imshow(' 1 title', img)
+cv2.imshow('circle' , img)
 cv2.waitKey()
-
-
-
+print('circle testing ')

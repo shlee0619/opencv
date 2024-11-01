@@ -16,18 +16,14 @@ import cv2
 path = './data/a1.png'
 img = cv2.imread(path)
 cv2.imshow('111 test', img)
-cv2.waitKey()  
 
 img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 cv2.imshow('222 test', img2 )
-cv2.waitKey() 
 
-
-path = './data/a1.png'
 img3 = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 cv2.imshow('333 test', img3)
 cv2.waitKey()  
-cv2.imwrite('./my/agray.png', img3)
+
 
 print('11-1-금요일 10  28')
 
