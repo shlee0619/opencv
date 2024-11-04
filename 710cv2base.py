@@ -19,6 +19,13 @@ plt.imshow(img_rgb)
 plt.axis('off')
 plt.show()
 
+img_blur = cv2.blur(img, (10,10))
+plt.imshow(img_blur, cmap='gray')
+
+img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+
+
+
 # 블러blur는 
 plt.imshow(img)
 plt.xticks([])
