@@ -21,12 +21,12 @@ cv2.waitKey()
 
 # img = cv2.imread(path , cv2.IMREAD_COLOR) 
 img = cv2.imread(path)
-
 b,g,r = cv2.split(img)
 img2 = cv2.merge([r,g,b])
 
 # 컬러가 다르게 출력되어서 다시 분리,머지시킴 plt.imshow(img) #RGB대신 BGR표현
 plt.imshow(img2) #RGB대신 BGR표현
+plt.axis('off')
 plt.xticks([])
 plt.yticks([])
 plt.title('cv2.IMREAD_COLOR')
