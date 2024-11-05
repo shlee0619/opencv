@@ -18,6 +18,33 @@ plt.imshow(img_rgb)
 plt.title('original 원본이미지')
 plt.show() 
 
+rectangle = (1,2,3,4)
+mask = np.zeros()
+
+#임시배열
+bgmask = np.zeros()
+fgmask = np.zeros()
+
+cv2.grabCut(1,2,3,4,5,6,7)
+
+a = 1
+b = 2
+mask = np.where(a|b)
+
+#mask곱연산
+img_cal = mask*mask
+plt.imshow(img_rgb)
+plt.title('11-05-화요일 배경제거 grabCut함수')
+plt.show()
+
+
+#배경제거후 픽셀 중간값을 계산해서 Canny()
+med = np.median(img)
+cv2.Canny() #GaussianBlur(), Canny()
+
+
+
+
 # a, img_bin = cv2.threshold(img_rgb, 90, 155, cv2.THRESH_BINARY)
 # print('cv2.threshold함수 첫번째 리턴값 ' , a)
 # print('cv2.threshold함수 두번째 리턴값 ' , img_bin)
