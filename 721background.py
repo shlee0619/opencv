@@ -18,14 +18,45 @@ plt.imshow(img_rgb)
 plt.title('original 원본이미지')
 plt.show() 
 
-rectangle = (1,2,3,4)
-mask = np.zeros()
+rectangle = (0,56,256,150)
+mask = np.zeros(img_rgb.shape[:2], np.uint8)
 
 #임시배열
-bgmask = np.zeros()
-fgmask = np.zeros()
+bgmask = np.zeros((1,65), np.float64)
+fgmask = np.zeros((1,65), np.float64)
 
-cv2.grabCut(1,2,3,4,5,6,7)
+#cv2.grabCut(1src, 2마스킹, 3사각형, 4백, 5프런트, 6반복횟수, 7사각형초기화)
+cv2.grabCut(img_rgb, mask, rectangle, 
+            bgmask, fgmask, 5, cv2.GC_INIT_WITH_RECT)
+# cv2.grabCut(1,2,3,4,5,6,7)
+
+mask2=np.where((mask==2)|(mask==0), 0, 1).astype('uint8')
+img_rgb_ob = img_rgb * mask2[:,:, np.newaxis]
+plt.imshow(img_rgb_ob)
+plt.title('14:40분 마스킹 이미지')
+plt.show()
+print('np & cv2')
+
+
+img_gray = cv2.imread('./data/a1.png', cv2.IMREAD_GRAYSCALE)
+img_md = np.median(img_gray)
+print('이미지 미디언 ', img_md)
+plt.imshow(img_gray)
+plt.title('11-05-화요일 gray test')
+plt.show()
+
+
+
+lowera = int(max(0,(1.0-0.33)*img_md))
+upperb = int(min(255,(1.0+0.33)*img_md))
+image_canny  = cv2.Canny(img_gray, lowera, upperb)
+plt.imshow(image_canny, cmap = 'gray')
+plt.title('11-05-화요일 canny test')
+plt.show()
+
+
+
+'''
 
 a = 1
 b = 2
@@ -66,3 +97,4 @@ print()
 
 
 
+'''
