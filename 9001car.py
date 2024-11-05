@@ -169,3 +169,12 @@ new_cd = [car_find(fill) for fill in fills]
 new_cd = [cand[0] for cand in new_cd  if cand] 
 imgs = [car_position(image, k) for k in new_cd]
 print('자동차 번호만 추출 성공 ')
+
+
+'''
+Morphological Transformation 
+ 1. Erosion  : (침식) 원본 이미지의 각 픽셀에 structuring element(구조화 요소)를 적용해 하나라도 0이 있으면 대상 픽셀을 제거하는 방법이다.
+ 2. Dilation : (팽창) 팽창은 원본 이미지의 각 픽셀에 structuring element(구조화 요소)를 적용해 하나라도 1이 있으면 대상 픽셀을 1로 만드는 방법이다.
+ 3. Opening : 이미지에 Erosion(침식) 적용 후 Dilation(팽창) 적용하는 것으로 영역이 점점 둥글게 된다. 따라서 점 잡음 이나 작은 물체, 돌기 등을 제거하는데 적합하다.
+ 4. Closing : 이미지에 Dilation(팽창) 적용 후 Erosion(침식) 적용하는 것으로 영역과 영역이 서로 붙기 때문에 이미지의 전체적인 윤곽을 파악하기에 적합하다.
+'''

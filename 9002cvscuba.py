@@ -30,7 +30,7 @@ while video.isOpened():
         break
     
     cv2.imshow('test', frame)
-    mypath = './data/my/myscuba_'+ str(num)+'.jpg'
+    mypath = './my/myscuba_'+ str(num)+'.jpg'
     cv2.imwrite(mypath, frame)  #myscuba_0.jpg ~ myscuba_218.jpg생성됨
     if cv2.waitKey(25) == ord('q'):
         print('영상을 강제종료합니다')
