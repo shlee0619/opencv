@@ -20,7 +20,7 @@ def preprocessing(coin_no):
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)          # 명암도 영상 변환
     gray = cv2.GaussianBlur(gray, (7,7), 2, 2)              # 블러링
-    flag = cv2.THRESH_BINARY + cv2.THRESH_OTSU              # 오츠(otus) 이진화 지정
+    flag = cv2.THRESH_BINARY + cv2.THRESH_OTSU              # 오츠(otsu) 이진화 지정
     th_one, th_img = cv2.threshold(gray, 130, 255, flag)    # 이진화
     print('th_one 결과' , th_one)
 

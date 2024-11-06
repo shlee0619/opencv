@@ -13,7 +13,7 @@ import cv2
 
 path = './data/a1.png'
 img = cv2.imread(path) 
-# img = cv2.imread(path , cv2.IMREAD_GRAYSCALE) 
+img = cv2.imread(path , cv2.IMREAD_GRAYSCALE) 
 # img = cv2.imread(path , cv2.IMREAD_COLOR) 
 cv2.imshow('test 1', img) #컬러그대로 적용
 cv2.waitKey()
