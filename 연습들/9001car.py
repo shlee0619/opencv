@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import time
 
 
-path = './images/car/05.jpg'
+path = './images/car/03.jpg'
 img_origin = cv2.imread(path, cv2.IMREAD_COLOR) 
-gray = cv2.cvtColor(img_origin, cv2.COLOR_RGB2HSV)
-plt.title('cv2.COLOR_RGB2HSV')  
+gray = cv2.cvtColor(img_origin, cv2.COLOR_BGR2LAB)
+plt.title('cv2.COLOR_BGR2LAB')  
 plt.imshow(gray,cmap='gray')
 plt.show()
 
@@ -110,8 +110,8 @@ def car_find(morph):
     plt.show()
     return csa 
 
-# path = './images/car/05.jpg'
-car_no = 5  # 5, 13, 15, 20 // 61어 1099번호
+# path = './images/car/04.jpg'
+car_no = 4  # 5, 13, 15, 20 // 61어 1099번호
 image, morph = preprocessing(car_no) #데이터회색,블러
 mycar = car_find(morph) #이미지컨투어 사각형 지정 
 
